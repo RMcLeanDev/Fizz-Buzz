@@ -1,43 +1,50 @@
 import React, {useState} from 'react';
 import './App.scss';
+import Footer from './Footer';
 
 function App() {
 
   const [numInput, setNumInput] = useState(0);
   const [error, setError] = useState(null);
-  const result = [];
+  const [result, setResult] = useState(null);
 
   function startFizzBuzz(e){
     setError(null);
     e.preventDefault();
     let number = parseInt(numInput)
-    if(numInput === 0){
-      setError("Number must be greater than 0")
-    } else {
-      console.log(10%3)
+    let arry = [];
       for(let i=0; i<5; i++){
-        if(number%3 === 0 && number%5 === 0){
-          result.push("fizz-buzz")
+        if(number === 0){
+          arry.push(0)
+        } else if(number%3 === 0 && number%5 === 0){
+          arry.push("fizz-buzz")
         } else if(number%5 === 0){
-          result.push("buzz")
+          arry.push("buzz")
         } else if(number%3 === 0){
-          result.push("fizz")
+          arry.push("fizz")
         } else {
-          result.push(number)
+          arry.push(number)
         }
         number ++;
       }
-      console.log(result);
-    }
+    setResult(arry)
   }
 
   return (
     <div className="App">
-      <h1>Fizz-Buzz</h1>
+      <h1 className="title">Fizz-Buzz</h1>
+      <p className="definition">Fizz-Buzz Rules: If a number is divisible by 3 it will turn to "Fizz". if it's divisible by 5 it will turn to "Buzz". If it's divisible by 3 and 5 it will turn to "Fizz-Buzz"</p>
+      <p>Enter a number and see what happens.</p>
       {error}
       <form onSubmit={startFizzBuzz}>
         <input type="number" value={numInput} onChange={e => setNumInput(e.target.value)}/>
+        <button type="submit">Submit</button>
       </form>
+      <div className="results">
+        {result ? result.map(e => {
+          return <p>{e}</p>
+        }):null}
+      </div>
     </div>
   );
 }

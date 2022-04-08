@@ -2,3 +2,44 @@
   text-align: center;
   color: white;
 }
+
+.title{
+  font-size: 70px;
+  margin: 0;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.results{
+  font-size: 25px;
+  width: 95vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  p{
+    border: 5px solid black;
+    margin: 0;
+    background-color: teal;
+  }
+}
+
+button{
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+input{
+  border: 1px solid black;
+  text-align: center;
+  margin-right: -1px;
+  margin-bottom: 10px;
+  border: 1px solid teal;
+}
+
+.definition{
+  width: 70vw;
+  margin: auto;
+  border-bottom: 1px solid teal;
+}
