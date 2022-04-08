@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     let number = parseInt(numInput)
     let arry = [];
-      for(let i=0; i<5; i++){
+      for(let i=0; i<100; i++){
         if(number === 0){
           arry.push(0)
         } else if(number%3 === 0 && number%5 === 0){
@@ -45,6 +45,7 @@ function App() {
           return <p>{e}</p>
         }):null}
       </div>
+      <Footer/>
     </div>
   );
 }
