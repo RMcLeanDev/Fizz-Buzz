@@ -11,6 +11,8 @@ function App() {
     e.preventDefault();
     if(numInput === 0){
       setError("Number must be greater than 0")
+    } else {
+      
     }
   }
 
